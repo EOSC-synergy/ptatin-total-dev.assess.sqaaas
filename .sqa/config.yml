@@ -1,0 +1,62 @@
+config:
+  credentials: []
+  project_repos:
+    bitbucket.org/dmay/ptatin-total-dev:
+      branch: FR00045642/deliverable-candidate
+      repo: https://bitbucket.org/dmay/ptatin-total-dev
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.9
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      bitbucket.org/dmay/ptatin-total-dev git:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaggy-zucchini-spitz.sh
+        container: qc.acc_wheezy-russet-bat
+  QC.Doc:
+    repos:
+      bitbucket.org/dmay/ptatin-total-dev find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.flimsy-eggplant-zonkey.sh
+        container: qc.doc_boozy-taupe-tzu
+      bitbucket.org/dmay/ptatin-total-dev git:
+        commands:
+        - /usr/bin/env sh .sqa/script.scaly-silver-woodlouse.sh
+        container: qc.doc_silly-cinnamon-millipede
+      bitbucket.org/dmay/ptatin-total-dev markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.crappy-olivine-wombat.sh
+        container: qc.doc_muggy-olive-akita
+  QC.Lic:
+    repos:
+      bitbucket.org/dmay/ptatin-total-dev licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.flaky-turquoise-dormouse.sh
+        container: qc.lic_squirrely-smalt-insect
+  QC.Sec:
+    repos:
+      bitbucket.org/dmay/ptatin-total-dev bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.wheezy-ivory-penguin.sh
+        container: qc.sec_snippy-rose-civet
+  QC.Sty:
+    repos:
+      bitbucket.org/dmay/ptatin-total-dev flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.shabby-bronze-caiman.sh
+        container: qc.sty_craggy-gold-dhole
+      bitbucket.org/dmay/ptatin-total-dev jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.tasty-russet-ray.sh
+        container: qc.sty_woozy-cardinal-gibbon
+  QC.Ver:
+    repos:
+      bitbucket.org/dmay/ptatin-total-dev get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.sleazy-lime-dachshund.sh
+        container: qc.ver_skinny-lilac-moorhen
+timeout: 5400
