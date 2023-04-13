@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     bitbucket.org/dmay/ptatin-total-dev:
-      branch: FR00045642/deliverable-candidate
+      branch: FR00045642/SQAaaS-bronze-badge
       repo: https://bitbucket.org/dmay/ptatin-total-dev
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: release/1.7.9
@@ -15,48 +15,54 @@ sqa_criteria:
     repos:
       bitbucket.org/dmay/ptatin-total-dev git:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-zucchini-spitz.sh
-        container: qc.acc_wheezy-russet-bat
+        - /usr/bin/env sh .sqa/script.snazzy-sepia-paradise.sh
+        container: qc.acc_snappy-teal-tang
   QC.Doc:
     repos:
       bitbucket.org/dmay/ptatin-total-dev find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.flimsy-eggplant-zonkey.sh
-        container: qc.doc_boozy-taupe-tzu
+        - /usr/bin/env sh .sqa/script.ugly-cyan-bison.sh
+        container: qc.doc_zippy-dandelion-burmese
       bitbucket.org/dmay/ptatin-total-dev git:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-silver-woodlouse.sh
-        container: qc.doc_silly-cinnamon-millipede
+        - /usr/bin/env sh .sqa/script.slimy-black-chameleon.sh
+        container: qc.doc_skanky-amethyst-forest
       bitbucket.org/dmay/ptatin-total-dev markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.crappy-olivine-wombat.sh
-        container: qc.doc_muggy-olive-akita
+        - /usr/bin/env sh .sqa/script.flabby-turquoise-chameleon.sh
+        container: qc.doc_messy-periwinkle-jellyfish
   QC.Lic:
     repos:
       bitbucket.org/dmay/ptatin-total-dev licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.flaky-turquoise-dormouse.sh
-        container: qc.lic_squirrely-smalt-insect
+        - /usr/bin/env sh .sqa/script.stinky-cinnabar-lion.sh
+        container: qc.lic_smelly-chestnut-capuchin
+  QC.Met:
+    repos:
+      bitbucket.org/dmay/ptatin-total-dev cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.snappy-celadon-mammoth.sh
+        container: qc.met_flimsy-eggplant-cichlid
   QC.Sec:
     repos:
       bitbucket.org/dmay/ptatin-total-dev bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-ivory-penguin.sh
-        container: qc.sec_snippy-rose-civet
+        - /usr/bin/env sh .sqa/script.stuffy-ochre-woodpecker.sh
+        container: qc.sec_wiggy-amaranth-birman
   QC.Sty:
     repos:
       bitbucket.org/dmay/ptatin-total-dev flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.shabby-bronze-caiman.sh
-        container: qc.sty_craggy-gold-dhole
+        - /usr/bin/env sh .sqa/script.craggy-vermilion-labradoodle.sh
+        container: qc.sty_lanky-copper-gharial
       bitbucket.org/dmay/ptatin-total-dev jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-russet-ray.sh
-        container: qc.sty_woozy-cardinal-gibbon
+        - /usr/bin/env sh .sqa/script.scanty-salmon-penguin.sh
+        container: qc.sty_wheezy-amaranth-civet
   QC.Ver:
     repos:
       bitbucket.org/dmay/ptatin-total-dev get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.sleazy-lime-dachshund.sh
-        container: qc.ver_skinny-lilac-moorhen
+        - /usr/bin/env sh .sqa/script.bluesy-vermilion-cat.sh
+        container: qc.ver_slimy-gold-budgerigar
 timeout: 5400
